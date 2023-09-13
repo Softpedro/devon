@@ -10,7 +10,7 @@ const Categories: React.FC = () => {
   const { data, loading, error } = useFetch(`${process.env.NEXT_PUBLIC_API}/sample.json`);
   const [movies, setMovies] = useRecoilState<Movies[]>(moviesState);
   const [series, setSeries] = useRecoilState<Movies[]>(SeriesState);
-
+  console.log(`${process.env.NEXT_PUBLIC_API}/sample.json`, 'process.env.NEXT_PUBLIC_API')
   useEffect(() => {
     if (!loading && data) {
       //@ts-ignore
